@@ -10,11 +10,12 @@
 
 @interface FormularioContatoController : UIViewController
 
-@property(weak, nonatomic) IBOutlet UITextField *nome;
-@property(weak, nonatomic) IBOutlet UITextField *email;
-@property(weak, nonatomic) IBOutlet UITextField *telefone;
-@property(weak, nonatomic) IBOutlet UITextField *endereco;
-@property(weak, nonatomic) IBOutlet UITextField *site;
+@property(weak, nonatomic) IBOutlet UITextField *campoNome;
+@property(weak, nonatomic) IBOutlet UITextField *campoEmail;
+@property(weak, nonatomic) IBOutlet UITextField *campoTelefone;
+@property(weak, nonatomic) IBOutlet UITextField *campoEndereco;
+@property(weak, nonatomic) IBOutlet UITextField *campoSite;
 
+- (IBAction) gravar;
 
 @end

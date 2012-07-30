@@ -7,6 +7,7 @@
 //
 
 #import "SSAppDelegate.h"
+#import "FormularioContatoController.h"
 
 @implementation SSAppDelegate
 
@@ -14,10 +15,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+    
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] init];
+    
+    // caso eu queira ter uma xib com nome diferente do controller posso chamar o método como abaixo
+    // FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithNibName:@"nome da xib"];
+    
+    [[self window] setRootViewController:formulario];
+    [[self window] setBackgroundColor:[UIColor whiteColor]];
+    [[self window] makeKeyAndVisible];
+    
     return YES;
 }
 
