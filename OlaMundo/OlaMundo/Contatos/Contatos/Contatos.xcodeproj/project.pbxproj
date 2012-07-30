@@ -1,0 +1,274 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA215C6F86A00CECDAD /* UIKit.framework */; };
+		5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA415C6F86A00CECDAD /* Foundation.framework */; };
+		5948CEA715C6F86A00CECDAD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA615C6F86A00CECDAD /* CoreGraphics.framework */; };
+		5948CEAD15C6F86A00CECDAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5948CEAB15C6F86A00CECDAD /* InfoPlist.strings */; };
+		5948CEAF15C6F86A00CECDAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5948CEAE15C6F86A00CECDAD /* main.m */; };
+		5948CEB315C6F86A00CECDAD /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5948CEB215C6F86A00CECDAD /* SSAppDelegate.m */; };
+		5948CEC115C6FB8100CECDAD /* FormularioContatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */; };
+		5948CEC215C6FB8100CECDAD /* FormularioContatoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5948CE9E15C6F86A00CECDAD /* Contatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5948CEA215C6F86A00CECDAD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5948CEA415C6F86A00CECDAD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5948CEA615C6F86A00CECDAD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5948CEAA15C6F86A00CECDAD /* Contatos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Contatos-Info.plist"; sourceTree = "<group>"; };
+		5948CEAC15C6F86A00CECDAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5948CEAE15C6F86A00CECDAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5948CEB015C6F86A00CECDAD /* Contatos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Contatos-Prefix.pch"; sourceTree = "<group>"; };
+		5948CEB115C6F86A00CECDAD /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
+		5948CEB215C6F86A00CECDAD /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
+		5948CEBE15C6FB8100CECDAD /* FormularioContatoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormularioContatoController.h; sourceTree = "<group>"; };
+		5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormularioContatoController.m; sourceTree = "<group>"; };
+		5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormularioContatoController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5948CE9B15C6F86A00CECDAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */,
+				5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */,
+				5948CEA715C6F86A00CECDAD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5948CE9315C6F86A00CECDAD = {
+			isa = PBXGroup;
+			children = (
+				5948CEA815C6F86A00CECDAD /* Contatos */,
+				5948CEA115C6F86A00CECDAD /* Frameworks */,
+				5948CE9F15C6F86A00CECDAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5948CE9F15C6F86A00CECDAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5948CE9E15C6F86A00CECDAD /* Contatos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5948CEA115C6F86A00CECDAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5948CEA215C6F86A00CECDAD /* UIKit.framework */,
+				5948CEA415C6F86A00CECDAD /* Foundation.framework */,
+				5948CEA615C6F86A00CECDAD /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5948CEA815C6F86A00CECDAD /* Contatos */ = {
+			isa = PBXGroup;
+			children = (
+				5948CEB115C6F86A00CECDAD /* SSAppDelegate.h */,
+				5948CEB215C6F86A00CECDAD /* SSAppDelegate.m */,
+				5948CEA915C6F86A00CECDAD /* Supporting Files */,
+				5948CEBE15C6FB8100CECDAD /* FormularioContatoController.h */,
+				5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */,
+				5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */,
+			);
+			path = Contatos;
+			sourceTree = "<group>";
+		};
+		5948CEA915C6F86A00CECDAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5948CEAA15C6F86A00CECDAD /* Contatos-Info.plist */,
+				5948CEAB15C6F86A00CECDAD /* InfoPlist.strings */,
+				5948CEAE15C6F86A00CECDAD /* main.m */,
+				5948CEB015C6F86A00CECDAD /* Contatos-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5948CE9D15C6F86A00CECDAD /* Contatos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5948CEB615C6F86A00CECDAD /* Build configuration list for PBXNativeTarget "Contatos" */;
+			buildPhases = (
+				5948CE9A15C6F86A00CECDAD /* Sources */,
+				5948CE9B15C6F86A00CECDAD /* Frameworks */,
+				5948CE9C15C6F86A00CECDAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Contatos;
+			productName = Contatos;
+			productReference = 5948CE9E15C6F86A00CECDAD /* Contatos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5948CE9515C6F86A00CECDAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Sirius Sofitware";
+			};
+			buildConfigurationList = 5948CE9815C6F86A00CECDAD /* Build configuration list for PBXProject "Contatos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5948CE9315C6F86A00CECDAD;
+			productRefGroup = 5948CE9F15C6F86A00CECDAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5948CE9D15C6F86A00CECDAD /* Contatos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5948CE9C15C6F86A00CECDAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5948CEAD15C6F86A00CECDAD /* InfoPlist.strings in Resources */,
+				5948CEC215C6FB8100CECDAD /* FormularioContatoController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5948CE9A15C6F86A00CECDAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5948CEAF15C6F86A00CECDAD /* main.m in Sources */,
+				5948CEB315C6F86A00CECDAD /* SSAppDelegate.m in Sources */,
+				5948CEC115C6FB8100CECDAD /* FormularioContatoController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5948CEAB15C6F86A00CECDAD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5948CEAC15C6F86A00CECDAD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5948CEB415C6F86A00CECDAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5948CEB515C6F86A00CECDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5948CEB715C6F86A00CECDAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Contatos/Contatos-Prefix.pch";
+				INFOPLIST_FILE = "Contatos/Contatos-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5948CEB815C6F86A00CECDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Contatos/Contatos-Prefix.pch";
+				INFOPLIST_FILE = "Contatos/Contatos-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5948CE9815C6F86A00CECDAD /* Build configuration list for PBXProject "Contatos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5948CEB415C6F86A00CECDAD /* Debug */,
+				5948CEB515C6F86A00CECDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5948CEB615C6F86A00CECDAD /* Build configuration list for PBXNativeTarget "Contatos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5948CEB715C6F86A00CECDAD /* Debug */,
+				5948CEB815C6F86A00CECDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5948CE9515C6F86A00CECDAD /* Project object */;
+}
