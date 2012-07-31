@@ -8,20 +8,15 @@
 
 #import "FormularioContatoController.h"
 #import "Contato.h"
+#import "ListaContatoViewController.h"
+
+#define allTrim( object ) [object stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ]
 
 @implementation FormularioContatoController
 
 @synthesize campoNome, campoEmail, campoTelefone, campoEndereco, campoSite;
 
 @synthesize contatos;
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        [self setContatos: [[NSMutableArray alloc] init]];
-    }
-    return self;
-}
 
 - (void) limparFormulario {
     [campoNome setText:@""];
@@ -31,28 +26,13 @@
     [campoSite setText:@""];
 }
 
-- (IBAction) gravar{
-    NSString *nome = [campoNome text];
-    NSString *email = [campoEmail text];
-    NSString *telefone = [campoTelefone text];
-    NSString *endereco = [campoEndereco text];
-    NSString *site = [campoSite text];
-    
-    // podemos guardar informações em memória assim 
-    NSMutableDictionary *contatoDicionario = [[NSMutableDictionary alloc] initWithObjectsAndKeys:nome,@"nome",email,@"email",telefone,@"telefone", endereco,@"endereco", site, @"site", nil];
-    NSLog(@"dados: %@", contatoDicionario);
-    
-    // ou assim:
-    NSMutableDictionary *dadosDoContato = [[NSMutableDictionary alloc] init];
-    [dadosDoContato setObject:nome forKey:@"nome"];
-    [dadosDoContato setObject:email forKey:@"email"];
-    [dadosDoContato setObject:telefone forKey:@"telefone"];
-    [dadosDoContato setObject:endereco forKey:@"endereco"];
-    [dadosDoContato setObject:site forKey:@"site"];
-    
-    NSLog(@"dados: %@", dadosDoContato);
-    
-    // ou assim (a melhor forma)
+- (void) cancelar {
+    [self dismissModalViewControllerAnimated:true];
+}
+
+
+- (Contato *) pegaDadosDoFormulario {
+    // ou assim (a melhor forma) 
     Contato *contato = [[Contato alloc] init];
     [contato setNome:[campoNome text]];
     [contato setEmail:[campoEmail text]];
@@ -60,20 +40,51 @@
     [contato setTelefone:[campoTelefone text]];
     [contato setSite:[campoSite text]];
     
-    NSLog(@"contato nome: %@", [contato nome]);
-
-    // agora adicionando o elemento ao array
-    [contatos addObject:contato];
-    
-    [self limparFormulario];
+    return contato;
 }
 
-
-
-- (IBAction) visualizarContatos {
-    for (Contato *contato in contatos) {
-        NSLog(@"Nome: %@", [contato nome]);
+- (Boolean) contatoEhValido:(Contato *) contato {
+    Boolean resultado = true;
+    
+    if([allTrim( [contato nome] ) length] == 0){
+        resultado = false;
     }
+
+    if([allTrim( [contato telefone] ) length] == 0){
+        resultado = false;
+    }
+    
+    NSLog(@"Contato é válido? %s", resultado ? "true" : "false");
+    
+    return resultado;
+}
+
+- (void) gravar{
+    Contato *contato = [self pegaDadosDoFormulario];
+    if([self contatoEhValido:contato]){
+        [contatos addObject:contato];
+        [self cancelar];
+    } else {
+        [campoNome becomeFirstResponder];
+    }
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        [[self navigationItem] setTitle:@"Formulário"];
+        
+        UIBarButtonItem *botaoVoltar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelar)];
+        [[self navigationItem] setLeftBarButtonItem:botaoVoltar];
+
+        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
+        [[self navigationItem] setRightBarButtonItem:botaoGravar];
+
+        [self setContatos: [[NSMutableArray alloc] init]];
+        [self limparFormulario];
+        [campoNome becomeFirstResponder];
+    }
+    return self;
 }
 
 @end

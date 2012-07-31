@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5941E21C15C80CCB00A3B059 /* ListaContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */; };
 		5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA215C6F86A00CECDAD /* UIKit.framework */; };
 		5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA415C6F86A00CECDAD /* Foundation.framework */; };
 		5948CEA715C6F86A00CECDAD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA615C6F86A00CECDAD /* CoreGraphics.framework */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatoViewController.h; sourceTree = "<group>"; };
+		5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatoViewController.m; sourceTree = "<group>"; };
 		5948CE9E15C6F86A00CECDAD /* Contatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5948CEA215C6F86A00CECDAD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5948CEA415C6F86A00CECDAD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +91,8 @@
 				5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */,
 				599C7E1615C70D2C0008E864 /* Contato.h */,
 				599C7E1715C70D2C0008E864 /* Contato.m */,
+				5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */,
+				5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */,
 			);
 			path = Contatos;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				5948CEB315C6F86A00CECDAD /* SSAppDelegate.m in Sources */,
 				5948CEC115C6FB8100CECDAD /* FormularioContatoController.m in Sources */,
 				599C7E1815C70D2C0008E864 /* Contato.m in Sources */,
+				5941E21C15C80CCB00A3B059 /* ListaContatoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

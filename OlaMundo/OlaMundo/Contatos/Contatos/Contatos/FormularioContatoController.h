@@ -18,6 +18,4 @@
 
 @property(strong) NSMutableArray *contatos;
 
-- (IBAction) gravar;
-- (IBAction) visualizarContatos;
 @end
