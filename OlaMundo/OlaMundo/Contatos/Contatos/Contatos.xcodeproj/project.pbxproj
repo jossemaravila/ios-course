@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592A8C9715C84B2A0033DA03 /* llama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 592A8C9615C84B2A0033DA03 /* llama.jpg */; };
 		5941E21C15C80CCB00A3B059 /* ListaContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */; };
 		5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA215C6F86A00CECDAD /* UIKit.framework */; };
 		5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA415C6F86A00CECDAD /* Foundation.framework */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592A8C9615C84B2A0033DA03 /* llama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = llama.jpg; sourceTree = "<group>"; };
 		5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatoViewController.h; sourceTree = "<group>"; };
 		5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatoViewController.m; sourceTree = "<group>"; };
 		5948CE9E15C6F86A00CECDAD /* Contatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 		5948CEA815C6F86A00CECDAD /* Contatos */ = {
 			isa = PBXGroup;
 			children = (
+				592A8C9615C84B2A0033DA03 /* llama.jpg */,
 				5948CEB115C6F86A00CECDAD /* SSAppDelegate.h */,
 				5948CEB215C6F86A00CECDAD /* SSAppDelegate.m */,
 				5948CEA915C6F86A00CECDAD /* Supporting Files */,
@@ -161,6 +164,7 @@
 			files = (
 				5948CEAD15C6F86A00CECDAD /* InfoPlist.strings in Resources */,
 				5948CEC215C6FB8100CECDAD /* FormularioContatoController.xib in Resources */,
+				592A8C9715C84B2A0033DA03 /* llama.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

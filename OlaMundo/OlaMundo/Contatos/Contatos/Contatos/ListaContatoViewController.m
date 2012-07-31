@@ -15,7 +15,7 @@
 @synthesize contatos;
 
 - (void) exibeFormulario {
-    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithContatos:contatos];
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithListaDeContatos:contatos eContato:nil];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
     
     [self presentModalViewController:navigation animated:true];
@@ -47,11 +47,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     Contato *contato = [contatos objectAtIndex:[indexPath row]];
+    
+    UIImage *fotoContato = [UIImage imageNamed:@"llama.jpg"];
+    
     [[cell textLabel] setText:[contato nome]];
+    [[cell detailTextLabel] setText:[contato telefone]];
+    [[cell imageView] setImage:fotoContato];
     
     return cell;
 }
@@ -69,6 +74,17 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [[self tableView] reloadData];
+}
+
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Contato *contato = [contatos objectAtIndex:[indexPath row]];
+    NSLog(@"Nome Selecionado: %@",[contato nome]);
+
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithListaDeContatos:contatos eContato:contato];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
+    
+    [self presentModalViewController:navigation animated:true];
 }
 
 @end
