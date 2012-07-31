@@ -16,6 +16,8 @@
 @property(weak, nonatomic) IBOutlet UITextField *campoEndereco;
 @property(weak, nonatomic) IBOutlet UITextField *campoSite;
 
-- (IBAction) gravar;
+@property(strong) NSMutableArray *contatos;
 
+- (IBAction) gravar;
+- (IBAction) visualizarContatos;
 @end
