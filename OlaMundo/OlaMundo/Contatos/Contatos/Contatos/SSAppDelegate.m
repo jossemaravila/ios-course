@@ -15,25 +15,24 @@
 @synthesize window = _window;
 
 @synthesize contatos;
+@synthesize arquivoContatos;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     
     // Override point for customization after application launch.
-
-    // caso eu queira ter uma xib com nome diferente do controller posso chamar o método como abaixo
-    // FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithNibName:@"nome da xib"];
+    NSArray *userDirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = [userDirs objectAtIndex:0];
+    [self setArquivoContatos:[NSString stringWithFormat:@"%@/ArquivoContatos", documentDir]];
     
-    // FormularioContatoController *formulario = [[FormularioContatoController alloc] init];
-    // [[self window] setRootViewController:formulario];
-
-    [self setContatos: [[NSMutableArray alloc] init]];
-    
+    [self setContatos: [NSKeyedUnarchiver unarchiveObjectWithFile:[self arquivoContatos]]];
+    if(![self contatos]) {
+        [self setContatos:[[NSMutableArray alloc]init]];
+    }
+                        
     ListaContatoViewController *listagem = [[ListaContatoViewController alloc] initWithContatos:contatos];
-
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:listagem];
-    
     [[self window] setRootViewController:navigation];
     
     [[self window] setBackgroundColor:[UIColor whiteColor]];
@@ -52,10 +51,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
+    [NSKeyedArchiver archiveRootObject:[self contatos] toFile:[self arquivoContatos]];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

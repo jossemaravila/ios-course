@@ -15,7 +15,7 @@
 @synthesize contatos;
 
 - (void) exibeFormulario {
-    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithListaDeContatos:contatos eContato:nil];
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithListaDeContatos:contatos];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
     
     [self presentModalViewController:navigation animated:true];
@@ -50,6 +50,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
+    [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+    
     Contato *contato = [contatos objectAtIndex:[indexPath row]];
     
     UIImage *fotoContato = [UIImage imageNamed:@"llama.jpg"];
@@ -61,6 +63,29 @@
     return cell;
 }
 
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Contato *contato = [contatos objectAtIndex:[indexPath row]];
+    NSLog(@"Nome Selecionado: %@",[contato nome]);
+    
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithContato:contato];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];    
+    [self presentModalViewController:navigation animated:true];
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        [[self contatos] removeObjectAtIndex:[indexPath row]];
+        
+        // pode ser assim para remover a linha da tabela
+        NSArray *indexPaths =[NSArray arrayWithObject:indexPath];
+        [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        
+        // ou assim
+        // [tableView reloadData];
+    }
+}
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {    
     return 1;
@@ -76,15 +101,5 @@
     [[self tableView] reloadData];
 }
 
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Contato *contato = [contatos objectAtIndex:[indexPath row]];
-    NSLog(@"Nome Selecionado: %@",[contato nome]);
-
-    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithListaDeContatos:contatos eContato:contato];
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
-    
-    [self presentModalViewController:navigation animated:true];
-}
 
 @end

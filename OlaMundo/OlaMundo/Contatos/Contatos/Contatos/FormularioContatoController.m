@@ -15,6 +15,7 @@
 
 @synthesize campoNome, campoEmail, campoTelefone, campoEndereco, campoSite;
 @synthesize contatos;
+@synthesize contatoSelecionado;
 
 - (void) limparFormulario {
     [campoNome setText:@""];
@@ -29,17 +30,22 @@
     [self dismissModalViewControllerAnimated:true];
 }
 
-- (void) atualizarFormularioComDadosDoContato:(Contato *) contatoSelecionado {
-    [campoNome setText:[contatoSelecionado nome]];
-    [campoEndereco setText:[contatoSelecionado endereco]];
-    [campoEmail setText:[contatoSelecionado email]];
-    [campoTelefone setText:[contatoSelecionado telefone]];
-    [campoSite setText:[contatoSelecionado site]];
+- (void) atualizarFormularioComDadosDoContato:(Contato *) contato {
+    [campoNome setText:[contato nome]];
+    [campoEndereco setText:[contato endereco]];
+    [campoEmail setText:[contato email]];
+    [campoTelefone setText:[contato telefone]];
+    [campoSite setText:[contato site]];
 }
 
 
 - (Contato *) pegaDadosDoFormulario {
-    Contato *novoContato = [[Contato alloc] init];
+    Contato *novoContato = self.contatoSelecionado;
+    
+    if(!novoContato){
+        novoContato = [[Contato alloc] init];
+    }
+    
     [novoContato setNome:[campoNome text]];
     [novoContato setEmail:[campoEmail text]];
     [novoContato setEndereco:[campoEndereco text]];
@@ -89,16 +95,42 @@
     }
 }
 
+- (void) alterar{
+    contatoSelecionado = [self pegaDadosDoFormulario];
+    if([self contatoEhValido:contatoSelecionado]){
+        [self cancelar];
+    } else {
+        [campoNome becomeFirstResponder];
+    }
+}
 
-- (id) initWithListaDeContatos:(NSMutableArray *) listaContatos eContato:(Contato *) contatoSelecionado {
+- (id) initWithContato:(Contato *) contato {
     self = [self init];
     
-    [self limparFormulario];
-    [self setContatos: listaContatos];
-    [self atualizarFormularioComDadosDoContato:contatoSelecionado];
+    [self setContatoSelecionado: contato];
+    if(contato){
+        UIBarButtonItem *botaoAlterar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(alterar)];
+        [[self navigationItem] setRightBarButtonItem:botaoAlterar];            
+    } else {
+        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
+        [[self navigationItem] setRightBarButtonItem:botaoGravar];
+    }
     
     return self;
 }
+
+
+- (id) initWithListaDeContatos:(NSMutableArray *) listaContatos {
+    self = [self init];
+    
+    UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
+    [[self navigationItem] setRightBarButtonItem:botaoGravar];
+
+    [self setContatos: listaContatos];    
+    
+    return self;
+}
+
 
 - (id)init {
     self = [super init];
@@ -108,12 +140,17 @@
         UIBarButtonItem *botaoVoltar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelar)];
         [[self navigationItem] setLeftBarButtonItem:botaoVoltar];
 
-        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
-        [[self navigationItem] setRightBarButtonItem:botaoGravar];
-
         [campoNome becomeFirstResponder];
     }
     return self;
+}
+
+- (void) viewDidLoad{
+    if([self contatoSelecionado]){
+        [self limparFormulario];
+        
+        [self atualizarFormularioComDadosDoContato:[self contatoSelecionado]];    
+    }
 }
 
 @end

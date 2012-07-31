@@ -14,4 +14,6 @@
 
 @property(strong) NSMutableArray *contatos;
 
+@property(strong) NSString *arquivoContatos;
+
 @end

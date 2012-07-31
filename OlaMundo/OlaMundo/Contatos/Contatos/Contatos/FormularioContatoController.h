@@ -18,8 +18,13 @@
 @property(weak, nonatomic) IBOutlet UITextField *campoSite;
 
 @property(weak) NSMutableArray *contatos;
+
+@property(weak) Contato *contatoSelecionado;
+
 - (IBAction)validaCampo:(id)sender;
 
-- (id) initWithListaDeContatos:(NSMutableArray *) listaContatos eContato:(Contato *) contatoSelecionado;
+- (id) initWithListaDeContatos:(NSMutableArray *) listaContatos;
+
+- (id) initWithContato:(Contato *) _contatoSelecionado;
 
 @end
