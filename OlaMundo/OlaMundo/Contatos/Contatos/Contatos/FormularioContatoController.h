@@ -16,6 +16,8 @@
 @property(weak, nonatomic) IBOutlet UITextField *campoEndereco;
 @property(weak, nonatomic) IBOutlet UITextField *campoSite;
 
-@property(strong) NSMutableArray *contatos;
+@property(weak) NSMutableArray *contatos;
+
+- (id) initWithContatos:(NSMutableArray *) listaContatos;
 
 @end

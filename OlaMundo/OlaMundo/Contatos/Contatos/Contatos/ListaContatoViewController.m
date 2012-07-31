@@ -11,12 +11,24 @@
 
 @implementation ListaContatoViewController
 
+@synthesize contatos;
+
 - (void) exibeFormulario {
-    FormularioContatoController *formulario = [[FormularioContatoController alloc] init];
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithContatos:contatos];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
     
     [self presentModalViewController:navigation animated:true];
 }
+
+
+- (id) initWithContatos:(NSMutableArray *) listaContatos {
+    self = [self init];
+    
+    [self setContatos: listaContatos];
+    
+    return self;
+}
+
 
 - (id)init {
     self = [super init];
@@ -28,7 +40,6 @@
     }
     return self;
 }
-
 
 
 @end

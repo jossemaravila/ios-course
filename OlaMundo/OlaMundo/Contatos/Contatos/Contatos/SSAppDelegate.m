@@ -14,6 +14,8 @@
 
 @synthesize window = _window;
 
+@synthesize contatos;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
@@ -26,7 +28,9 @@
     // FormularioContatoController *formulario = [[FormularioContatoController alloc] init];
     // [[self window] setRootViewController:formulario];
 
-    ListaContatoViewController *listagem = [[ListaContatoViewController alloc] init];
+    [self setContatos: [[NSMutableArray alloc] init]];
+    
+    ListaContatoViewController *listagem = [[ListaContatoViewController alloc] initWithContatos:contatos];
 
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:listagem];
     

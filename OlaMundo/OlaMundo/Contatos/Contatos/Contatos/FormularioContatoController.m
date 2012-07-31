@@ -27,6 +27,7 @@
 }
 
 - (void) cancelar {
+    NSLog(@"Contatos = %i", [contatos count]);
     [self dismissModalViewControllerAnimated:true];
 }
 
@@ -69,6 +70,15 @@
     }
 }
 
+- (id) initWithContatos:(NSMutableArray *) listaContatos {
+    self = [self init];
+    
+    [self setContatos: listaContatos];
+    
+    return self;
+}
+
+
 - (id)init {
     self = [super init];
     if (self) {
@@ -80,7 +90,6 @@
         UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
         [[self navigationItem] setRightBarButtonItem:botaoGravar];
 
-        [self setContatos: [[NSMutableArray alloc] init]];
         [self limparFormulario];
         [campoNome becomeFirstResponder];
     }

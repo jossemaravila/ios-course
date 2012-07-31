@@ -10,6 +10,8 @@
 
 @interface ListaContatoViewController : UITableViewController
 
+@property(weak) NSMutableArray *contatos;
 
+- (id) initWithContatos:(NSMutableArray *) listaContatos;
 
 @end
