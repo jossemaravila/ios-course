@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ContatoProtocol.h"
+#import "EnviadorMensagensDelegate.h"
 
-@interface ListaContatoViewController : UITableViewController<ContatoProtocol>
+@interface ListaContatoViewController : UITableViewController<ContatoProtocol, UIActionSheetDelegate, EnviadorMensagensDelegate>
 
 @property(weak) NSMutableArray *contatos;
 

@@ -19,6 +19,7 @@
 		599C7E1815C70D2C0008E864 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 599C7E1715C70D2C0008E864 /* Contato.m */; };
 		59EAEF1915C96742004E1AE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59EAEF1B15C96742004E1AE7 /* Localizable.strings */; };
 		59EAEF1D15C96832004E1AE7 /* FormularioContatoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EAEF1F15C96832004E1AE7 /* FormularioContatoController.xib */; };
+		59EAEF2315C990EF004E1AE7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EAEF2215C990EF004E1AE7 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		59EAEF1E15C96832004E1AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
 		59EAEF2015C96835004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
 		59EAEF2115C971BA004E1AE7 /* ContatoProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContatoProtocol.h; sourceTree = "<group>"; };
+		59EAEF2215C990EF004E1AE7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		59EAEF2415C9A03D004E1AE7 /* EnviadorMensagensDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnviadorMensagensDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EAEF2315C990EF004E1AE7 /* MessageUI.framework in Frameworks */,
 				5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */,
 				5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */,
 				5948CEA715C6F86A00CECDAD /* CoreGraphics.framework in Frameworks */,
@@ -64,6 +68,7 @@
 		5948CE9315C6F86A00CECDAD = {
 			isa = PBXGroup;
 			children = (
+				59EAEF2215C990EF004E1AE7 /* MessageUI.framework */,
 				5948CEA815C6F86A00CECDAD /* Contatos */,
 				5948CEA115C6F86A00CECDAD /* Frameworks */,
 				5948CE9F15C6F86A00CECDAD /* Products */,
@@ -103,6 +108,7 @@
 				5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */,
 				5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */,
 				59EAEF2115C971BA004E1AE7 /* ContatoProtocol.h */,
+				59EAEF2415C9A03D004E1AE7 /* EnviadorMensagensDelegate.h */,
 			);
 			path = Contatos;
 			sourceTree = "<group>";
