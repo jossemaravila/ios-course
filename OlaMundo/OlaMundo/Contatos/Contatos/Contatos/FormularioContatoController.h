@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Contato.h"
+#import "ContatoProtocol.h"
 
 @interface FormularioContatoController : UIViewController
 
@@ -17,14 +18,12 @@
 @property(weak, nonatomic) IBOutlet UITextField *campoEndereco;
 @property(weak, nonatomic) IBOutlet UITextField *campoSite;
 
-@property(weak) NSMutableArray *contatos;
-
 @property(weak) Contato *contatoSelecionado;
 
 - (IBAction)validaCampo:(id)sender;
 
-- (id) initWithListaDeContatos:(NSMutableArray *) listaContatos;
-
 - (id) initWithContato:(Contato *) _contatoSelecionado;
+
+- (id) initWithDelegate:(id<ContatoProtocol>) _delegate andContato:(Contato *) _contatoSelecionado;
 
 @end

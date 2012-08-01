@@ -15,7 +15,8 @@
 @synthesize contatos;
 
 - (void) exibeFormulario {
-    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithListaDeContatos:contatos];
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithDelegate:self andContato:nil];
+    
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
     
     [self presentModalViewController:navigation animated:true];
@@ -68,7 +69,7 @@
     Contato *contato = [contatos objectAtIndex:[indexPath row]];
     NSLog(@"Nome Selecionado: %@",[contato nome]);
         
-    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithContato:contato];
+    FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithDelegate:self andContato:contato];
     
     // não preciso criar é só utilizar o self navigationController
     if([self navigationController]){
@@ -108,5 +109,8 @@
     [[self tableView] reloadData];
 }
 
+- (void)adicionaContato:(Contato *)contato {
+    [contatos addObject:contato];
+}
 
 @end

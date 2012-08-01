@@ -14,8 +14,54 @@
 @implementation FormularioContatoController
 
 @synthesize campoNome, campoEmail, campoTelefone, campoEndereco, campoSite;
-@synthesize contatos;
 @synthesize contatoSelecionado;
+
+id<ContatoProtocol> delegate;
+
+
+- (id) initWithContato:(Contato *) _contato {
+    self = [self init];
+    
+    [self setContatoSelecionado: _contato];
+    
+    return self;
+}
+
+- (id) initWithDelegate:(id<ContatoProtocol>) _delegate andContato:(Contato *) _contato {
+    self = [self initWithContato:_contato];
+    
+    delegate = _delegate;
+    
+    return self;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        [[self navigationItem] setTitle:NSLocalizedString(@"titulo_formulario", nil)];
+        
+        [campoNome becomeFirstResponder];
+    }
+    return self;
+}
+
+- (void) viewDidLoad{
+    if([self contatoSelecionado]){
+        UIBarButtonItem *botaoAlterar = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"botao_alterar", nil) style:UIBarButtonItemStylePlain target:self action:@selector(alterar)];
+        [[self navigationItem] setRightBarButtonItem:botaoAlterar];
+        
+        [self limparFormulario];
+        
+        [self atualizarFormularioComDadosDoContato:[self contatoSelecionado]];
+    } else {
+        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"botao_gravar", nil) style:UIBarButtonItemStylePlain target:self action:@selector(gravar)];
+        [[self navigationItem] setRightBarButtonItem:botaoGravar];
+        
+        UIBarButtonItem *botaoVoltar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelar)];
+        [[self navigationItem] setLeftBarButtonItem:botaoVoltar];
+    }
+}
+
 
 - (void) limparFormulario {
     [campoNome setText:@""];
@@ -25,11 +71,6 @@
     [campoSite setText:@""];
 }
 
-- (void) cancelar {
-    NSLog(@"Contatos = %i", [contatos count]);
-    [self dismissModalViewControllerAnimated:true];
-}
-
 - (void) atualizarFormularioComDadosDoContato:(Contato *) contato {
     [campoNome setText:[contato nome]];
     [campoEndereco setText:[contato endereco]];
@@ -37,7 +78,6 @@
     [campoTelefone setText:[contato telefone]];
     [campoSite setText:[contato site]];
 }
-
 
 - (Contato *) pegaDadosDoFormulario {
     Contato *novoContato = self.contatoSelecionado;
@@ -85,12 +125,13 @@
     return resultado;
 }
 
+
 - (void) gravar{
     NSLog(@"Gravar foi invocado");
     Contato *contato = [self pegaDadosDoFormulario];
     
     if([self contatoEhValido:contato]){
-        [contatos addObject:contato];
+        [delegate adicionaContato:contato];
         [self cancelar];
     } else {
         [campoNome becomeFirstResponder];
@@ -108,49 +149,9 @@
     }
 }
 
-- (id) initWithContato:(Contato *) contato {
-    self = [self init];
-    
-    [self setContatoSelecionado: contato];
-    
-    return self;
+- (void) cancelar {
+    [self dismissModalViewControllerAnimated:true];
 }
 
-
-- (id) initWithListaDeContatos:(NSMutableArray *) listaContatos {
-    self = [self init];
-    
-    [self setContatos: listaContatos];    
-    
-    return self;
-}
-
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        [[self navigationItem] setTitle:NSLocalizedString(@"titulo_formulario", nil)];
-
-        [campoNome becomeFirstResponder];
-    }
-    return self;
-}
-
-- (void) viewDidLoad{
-    if([self contatoSelecionado]){
-        UIBarButtonItem *botaoAlterar = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"botao_alterar", nil) style:UIBarButtonItemStylePlain target:self action:@selector(alterar)];
-        [[self navigationItem] setRightBarButtonItem:botaoAlterar];
-
-        [self limparFormulario];
-        
-        [self atualizarFormularioComDadosDoContato:[self contatoSelecionado]];    
-    } else {
-        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"botao_gravar", nil) style:UIBarButtonItemStylePlain target:self action:@selector(gravar)];
-        [[self navigationItem] setRightBarButtonItem:botaoGravar];
-
-        UIBarButtonItem *botaoVoltar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelar)];
-        [[self navigationItem] setLeftBarButtonItem:botaoVoltar];
-    }
-}
 
 @end

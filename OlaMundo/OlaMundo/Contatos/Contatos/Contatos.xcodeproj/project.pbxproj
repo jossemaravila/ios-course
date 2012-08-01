@@ -44,6 +44,7 @@
 		59EAEF1C15C96747004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59EAEF1E15C96832004E1AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
 		59EAEF2015C96835004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
+		59EAEF2115C971BA004E1AE7 /* ContatoProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContatoProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 				599C7E1715C70D2C0008E864 /* Contato.m */,
 				5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */,
 				5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */,
+				59EAEF2115C971BA004E1AE7 /* ContatoProtocol.h */,
 			);
 			path = Contatos;
 			sourceTree = "<group>";
