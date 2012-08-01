@@ -16,8 +16,9 @@
 		5948CEAF15C6F86A00CECDAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5948CEAE15C6F86A00CECDAD /* main.m */; };
 		5948CEB315C6F86A00CECDAD /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5948CEB215C6F86A00CECDAD /* SSAppDelegate.m */; };
 		5948CEC115C6FB8100CECDAD /* FormularioContatoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */; };
-		5948CEC215C6FB8100CECDAD /* FormularioContatoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */; };
 		599C7E1815C70D2C0008E864 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 599C7E1715C70D2C0008E864 /* Contato.m */; };
+		59EAEF1915C96742004E1AE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59EAEF1B15C96742004E1AE7 /* Localizable.strings */; };
+		59EAEF1D15C96832004E1AE7 /* FormularioContatoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EAEF1F15C96832004E1AE7 /* FormularioContatoController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +37,13 @@
 		5948CEB215C6F86A00CECDAD /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
 		5948CEBE15C6FB8100CECDAD /* FormularioContatoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormularioContatoController.h; sourceTree = "<group>"; };
 		5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormularioContatoController.m; sourceTree = "<group>"; };
-		5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormularioContatoController.xib; sourceTree = "<group>"; };
 		599C7E1615C70D2C0008E864 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
 		599C7E1715C70D2C0008E864 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
+		59EAEF1615C966F2004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		59EAEF1A15C96742004E1AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59EAEF1C15C96747004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		59EAEF1E15C96832004E1AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
+		59EAEF2015C96835004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +96,7 @@
 				5948CEA915C6F86A00CECDAD /* Supporting Files */,
 				5948CEBE15C6FB8100CECDAD /* FormularioContatoController.h */,
 				5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */,
-				5948CEC015C6FB8100CECDAD /* FormularioContatoController.xib */,
+				59EAEF1F15C96832004E1AE7 /* FormularioContatoController.xib */,
 				599C7E1615C70D2C0008E864 /* Contato.h */,
 				599C7E1715C70D2C0008E864 /* Contato.m */,
 				5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */,
@@ -103,6 +108,7 @@
 		5948CEA915C6F86A00CECDAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59EAEF1B15C96742004E1AE7 /* Localizable.strings */,
 				5948CEAA15C6F86A00CECDAD /* Contatos-Info.plist */,
 				5948CEAB15C6F86A00CECDAD /* InfoPlist.strings */,
 				5948CEAE15C6F86A00CECDAD /* main.m */,
@@ -146,6 +152,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				pt,
 			);
 			mainGroup = 5948CE9315C6F86A00CECDAD;
 			productRefGroup = 5948CE9F15C6F86A00CECDAD /* Products */;
@@ -163,8 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5948CEAD15C6F86A00CECDAD /* InfoPlist.strings in Resources */,
-				5948CEC215C6FB8100CECDAD /* FormularioContatoController.xib in Resources */,
+				59EAEF1D15C96832004E1AE7 /* FormularioContatoController.xib in Resources */,
 				592A8C9715C84B2A0033DA03 /* llama.jpg in Resources */,
+				59EAEF1915C96742004E1AE7 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +198,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				5948CEAC15C6F86A00CECDAD /* en */,
+				59EAEF1615C966F2004E1AE7 /* pt */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		59EAEF1B15C96742004E1AE7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59EAEF1A15C96742004E1AE7 /* en */,
+				59EAEF1C15C96747004E1AE7 /* pt */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		59EAEF1F15C96832004E1AE7 /* FormularioContatoController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59EAEF1E15C96832004E1AE7 /* en */,
+				59EAEF2015C96835004E1AE7 /* pt */,
+			);
+			name = FormularioContatoController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

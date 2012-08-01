@@ -1,0 +1,12 @@
+/* 
+  Localized.strings
+  Contatos
+
+  Created by Jossemar on 01/08/12.
+  Copyright (c) 2012 Sirius Sofitware. All rights reserved.
+*/
+"titulo_formulario" = "Form";
+"titulo_listagem" = "Contacts";
+"botao_gravar" = "Save";
+"botao_alterar" = "Confirm";
+

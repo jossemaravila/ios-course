@@ -36,4 +36,16 @@
     return self;
 }
 
+
++ (Contato*) comDicionario: (NSDictionary *) dicionario {
+    Contato *contato = [[Contato alloc] init];
+    [contato setNome: [dicionario objectForKey:@"nome"]];
+    [contato setEmail: [dicionario objectForKey:@"email"]];
+    [contato setTelefone: [dicionario objectForKey:@"telefone"]];
+    [contato setEndereco: [dicionario objectForKey:@"endereco"]];
+    [contato setSite: [dicionario objectForKey:@"site"]];
+    
+    return contato;
+}
+
 @end

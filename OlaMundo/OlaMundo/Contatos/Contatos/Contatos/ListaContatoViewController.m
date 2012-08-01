@@ -36,7 +36,7 @@
     if (self) {
         UIBarButtonItem *botaoNovo = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(exibeFormulario)];
         
-        [[self navigationItem] setTitle:@"Contatos"];
+        [[self navigationItem] setTitle:NSLocalizedString(@"titulo_listagem", nil)];
         [[self navigationItem] setRightBarButtonItem:botaoNovo];        
     }
     return self;
@@ -67,10 +67,16 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Contato *contato = [contatos objectAtIndex:[indexPath row]];
     NSLog(@"Nome Selecionado: %@",[contato nome]);
-    
+        
     FormularioContatoController *formulario = [[FormularioContatoController alloc] initWithContato:contato];
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];    
-    [self presentModalViewController:navigation animated:true];
+    
+    // não preciso criar é só utilizar o self navigationController
+    if([self navigationController]){
+        [[self navigationController] pushViewController:formulario animated:TRUE];
+    } else {
+        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:formulario];
+        [self presentModalViewController:navigation animated:true];
+    }
 }
 
 
@@ -97,6 +103,7 @@
 }
 
 
+// chamado toda a vez que a view for ficar visível
 - (void) viewWillAppear:(BOOL)animated {
     [[self tableView] reloadData];
 }

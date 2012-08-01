@@ -86,7 +86,9 @@
 }
 
 - (void) gravar{
+    NSLog(@"Gravar foi invocado");
     Contato *contato = [self pegaDadosDoFormulario];
+    
     if([self contatoEhValido:contato]){
         [contatos addObject:contato];
         [self cancelar];
@@ -96,9 +98,11 @@
 }
 
 - (void) alterar{
+    NSLog(@"Alterar foi invocado");
     contatoSelecionado = [self pegaDadosDoFormulario];
+    
     if([self contatoEhValido:contatoSelecionado]){
-        [self cancelar];
+        [[self navigationController ] popViewControllerAnimated:TRUE];
     } else {
         [campoNome becomeFirstResponder];
     }
@@ -108,13 +112,6 @@
     self = [self init];
     
     [self setContatoSelecionado: contato];
-    if(contato){
-        UIBarButtonItem *botaoAlterar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(alterar)];
-        [[self navigationItem] setRightBarButtonItem:botaoAlterar];            
-    } else {
-        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
-        [[self navigationItem] setRightBarButtonItem:botaoGravar];
-    }
     
     return self;
 }
@@ -123,9 +120,6 @@
 - (id) initWithListaDeContatos:(NSMutableArray *) listaContatos {
     self = [self init];
     
-    UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(gravar)];
-    [[self navigationItem] setRightBarButtonItem:botaoGravar];
-
     [self setContatos: listaContatos];    
     
     return self;
@@ -135,10 +129,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        [[self navigationItem] setTitle:@"Formulário"];
-        
-        UIBarButtonItem *botaoVoltar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelar)];
-        [[self navigationItem] setLeftBarButtonItem:botaoVoltar];
+        [[self navigationItem] setTitle:NSLocalizedString(@"titulo_formulario", nil)];
 
         [campoNome becomeFirstResponder];
     }
@@ -147,9 +138,18 @@
 
 - (void) viewDidLoad{
     if([self contatoSelecionado]){
+        UIBarButtonItem *botaoAlterar = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"botao_alterar", nil) style:UIBarButtonItemStylePlain target:self action:@selector(alterar)];
+        [[self navigationItem] setRightBarButtonItem:botaoAlterar];
+
         [self limparFormulario];
         
         [self atualizarFormularioComDadosDoContato:[self contatoSelecionado]];    
+    } else {
+        UIBarButtonItem *botaoGravar = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"botao_gravar", nil) style:UIBarButtonItemStylePlain target:self action:@selector(gravar)];
+        [[self navigationItem] setRightBarButtonItem:botaoGravar];
+
+        UIBarButtonItem *botaoVoltar = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelar)];
+        [[self navigationItem] setLeftBarButtonItem:botaoVoltar];
     }
 }
 

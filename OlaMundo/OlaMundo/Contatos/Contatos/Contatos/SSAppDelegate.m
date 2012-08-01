@@ -38,8 +38,23 @@
     [[self window] setBackgroundColor:[UIColor whiteColor]];
     [[self window] makeKeyAndVisible];
     
+    [self callRestService];
+    
     return YES;
 }
+
+- (void) callRestService {
+    NSString *url = @"http://localhost:8080/spring-rest-service/contato/";
+    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
+    
+    NSError *error;
+    NSDictionary *resultados = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                               options:NSJSONReadingMutableContainers error:&error];
+    if(!error){
+        NSLog(@"Resultado: %@", [resultados description]);
+    }
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
