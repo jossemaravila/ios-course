@@ -9,6 +9,7 @@
 #import "ListaContatoViewController.h"
 #import "FormularioContatoController.h"
 #import "Contato.h"
+#import <Twitter/Twitter.h>
 
 @implementation ListaContatoViewController
 
@@ -134,15 +135,7 @@ Contato *contatoPressionado;
         
         contatoPressionado = [contatos objectAtIndex:[indice row]];
         
-        UIDevice *device =[UIDevice currentDevice];
-        NSString *model = [device model];
-        UIActionSheet *opcoes = nil;
-        
-        if([model isEqualToString:@"Iphone"]){
-            opcoes = [[UIActionSheet alloc] initWithTitle:[contatoPressionado nome] delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar", @"Enviar Email", @"Visualizar Site", @"Abrir Mapa", @"Enviar SMS", nil ];
-        } else {
-            opcoes = [[UIActionSheet alloc] initWithTitle:[contatoPressionado nome] delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar", @"Enviar Email", @"Visualizar Site", @"Abrir Mapa", @"Enviar SMS", nil ];
-        }
+        UIActionSheet *opcoes = [[UIActionSheet alloc] initWithTitle:[contatoPressionado nome] delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar", @"Enviar Email", @"Visualizar Site", @"Abrir Mapa", @"Enviar SMS", @"Enviar Twitter", nil ];
         
         [opcoes showInView:[self view]];
     }    
@@ -170,6 +163,10 @@ Contato *contatoPressionado;
             [self enviarSMS];
             break;
             
+        case 5:
+            [self enviarTwitter];
+            break;
+            
         default:
             break;
     }
@@ -184,6 +181,13 @@ Contato *contatoPressionado;
         [self presentModalViewController:controller animated:YES];
     }
 }
+
+- (void) enviarTwitter{
+    TWTweetComposeViewController *controller = [[TWTweetComposeViewController alloc] init];
+    [controller setInitialText:@"#ip67caelum @caelum teste de envio de msg pela app do iphone"];
+    [self presentModalViewController:controller animated:YES ];
+}
+
 
 - (void) ligar{
     UIDevice *device =[UIDevice currentDevice];

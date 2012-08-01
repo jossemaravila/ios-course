@@ -13,7 +13,7 @@
 
 @implementation FormularioContatoController
 
-@synthesize campoNome, campoEmail, campoTelefone, campoEndereco, campoSite;
+@synthesize campoNome, campoEmail, campoTelefone, campoEndereco, campoSite, campoTwitter;
 @synthesize contatoSelecionado;
 
 id<ContatoProtocol> delegate;
@@ -69,6 +69,7 @@ id<ContatoProtocol> delegate;
     [campoEndereco setText:@""];
     [campoTelefone setText:@""];
     [campoSite setText:@""];
+    [campoTwitter setText:@""];
 }
 
 - (void) atualizarFormularioComDadosDoContato:(Contato *) contato {
@@ -77,6 +78,7 @@ id<ContatoProtocol> delegate;
     [campoEmail setText:[contato email]];
     [campoTelefone setText:[contato telefone]];
     [campoSite setText:[contato site]];
+    [campoTwitter setText:[contato twitter]];
 }
 
 - (Contato *) pegaDadosDoFormulario {
@@ -91,6 +93,7 @@ id<ContatoProtocol> delegate;
     [novoContato setEndereco:[campoEndereco text]];
     [novoContato setTelefone:[campoTelefone text]];
     [novoContato setSite:[campoSite text]];
+    [novoContato setTwitter:[campoTwitter text]];
     
     return novoContato;
 }

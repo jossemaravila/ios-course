@@ -15,5 +15,6 @@
 @property(strong) NSString * telefone;
 @property(strong) NSString * endereco;
 @property(strong) NSString * site;
+@property(strong) NSString * twitter;
 
 @end

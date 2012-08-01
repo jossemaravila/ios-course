@@ -17,6 +17,7 @@
 @property(weak, nonatomic) IBOutlet UITextField *campoTelefone;
 @property(weak, nonatomic) IBOutlet UITextField *campoEndereco;
 @property(weak, nonatomic) IBOutlet UITextField *campoSite;
+@property(weak, nonatomic) IBOutlet UITextField *campoTwitter;
 
 @property(weak) Contato *contatoSelecionado;
 

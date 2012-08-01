@@ -15,6 +15,7 @@
 @synthesize endereco; 
 @synthesize telefone;
 @synthesize site;
+@synthesize twitter;
 
 - (void) encodeWithCoder:(NSCoder *) coder{
     [coder encodeObject:[self nome] forKey:@"nome"];
@@ -22,6 +23,7 @@
     [coder encodeObject:[self telefone] forKey:@"telefone"];
     [coder encodeObject:[self endereco] forKey:@"endereco"];
     [coder encodeObject:[self site] forKey:@"site"];
+    [coder encodeObject:[self twitter] forKey:@"twitter"];
 }
 
 - (id) initWithCoder:(NSCoder *) decoder{
@@ -32,6 +34,7 @@
         [self setTelefone:[decoder decodeObjectForKey:@"telefone"]];
         [self setEndereco:[decoder decodeObjectForKey:@"endereco"]];
         [self setSite:[decoder decodeObjectForKey:@"site"]];
+        [self setTwitter:[decoder decodeObjectForKey:@"twitter"]];
     }
     return self;
 }
@@ -44,6 +47,7 @@
     [contato setTelefone: [dicionario objectForKey:@"telefone"]];
     [contato setEndereco: [dicionario objectForKey:@"endereco"]];
     [contato setSite: [dicionario objectForKey:@"site"]];
+    [contato setTwitter: [dicionario objectForKey:@"twitter"]];
     
     return contato;
 }

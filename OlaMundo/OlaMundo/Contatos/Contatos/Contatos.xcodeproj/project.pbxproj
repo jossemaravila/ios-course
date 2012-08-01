@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		592A8C9715C84B2A0033DA03 /* llama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 592A8C9615C84B2A0033DA03 /* llama.jpg */; };
+		593BF51515C9AFAA00079CFE /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593BF51415C9AFAA00079CFE /* Twitter.framework */; };
 		5941E21C15C80CCB00A3B059 /* ListaContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */; };
 		5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA215C6F86A00CECDAD /* UIKit.framework */; };
 		5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5948CEA415C6F86A00CECDAD /* Foundation.framework */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		592A8C9615C84B2A0033DA03 /* llama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = llama.jpg; sourceTree = "<group>"; };
+		593BF51415C9AFAA00079CFE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5941E21A15C80CCB00A3B059 /* ListaContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatoViewController.h; sourceTree = "<group>"; };
 		5941E21B15C80CCB00A3B059 /* ListaContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatoViewController.m; sourceTree = "<group>"; };
 		5948CE9E15C6F86A00CECDAD /* Contatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,11 +42,8 @@
 		5948CEBF15C6FB8100CECDAD /* FormularioContatoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormularioContatoController.m; sourceTree = "<group>"; };
 		599C7E1615C70D2C0008E864 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
 		599C7E1715C70D2C0008E864 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
-		59EAEF1615C966F2004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		59EAEF1A15C96742004E1AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		59EAEF1C15C96747004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59EAEF1E15C96832004E1AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
-		59EAEF2015C96835004E1AE7 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/FormularioContatoController.xib; sourceTree = "<group>"; };
 		59EAEF2115C971BA004E1AE7 /* ContatoProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContatoProtocol.h; sourceTree = "<group>"; };
 		59EAEF2215C990EF004E1AE7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		59EAEF2415C9A03D004E1AE7 /* EnviadorMensagensDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnviadorMensagensDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593BF51515C9AFAA00079CFE /* Twitter.framework in Frameworks */,
 				59EAEF2315C990EF004E1AE7 /* MessageUI.framework in Frameworks */,
 				5948CEA315C6F86A00CECDAD /* UIKit.framework in Frameworks */,
 				5948CEA515C6F86A00CECDAD /* Foundation.framework in Frameworks */,
@@ -68,7 +68,6 @@
 		5948CE9315C6F86A00CECDAD = {
 			isa = PBXGroup;
 			children = (
-				59EAEF2215C990EF004E1AE7 /* MessageUI.framework */,
 				5948CEA815C6F86A00CECDAD /* Contatos */,
 				5948CEA115C6F86A00CECDAD /* Frameworks */,
 				5948CE9F15C6F86A00CECDAD /* Products */,
@@ -86,6 +85,8 @@
 		5948CEA115C6F86A00CECDAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				593BF51415C9AFAA00079CFE /* Twitter.framework */,
+				59EAEF2215C990EF004E1AE7 /* MessageUI.framework */,
 				5948CEA215C6F86A00CECDAD /* UIKit.framework */,
 				5948CEA415C6F86A00CECDAD /* Foundation.framework */,
 				5948CEA615C6F86A00CECDAD /* CoreGraphics.framework */,
@@ -206,7 +207,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				5948CEAC15C6F86A00CECDAD /* en */,
-				59EAEF1615C966F2004E1AE7 /* pt */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -215,7 +215,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				59EAEF1A15C96742004E1AE7 /* en */,
-				59EAEF1C15C96747004E1AE7 /* pt */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -225,7 +224,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				59EAEF1E15C96832004E1AE7 /* en */,
-				59EAEF2015C96835004E1AE7 /* pt */,
 			);
 			name = FormularioContatoController.xib;
 			sourceTree = "<group>";
